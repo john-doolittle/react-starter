@@ -12,10 +12,10 @@ class App extends React.Component {
       listOfMovies: sampleMovieData,
       searchInputValue: ''
     };
-  this.handleSearchQuery = this.handleSearchQuery.bind(this);
+  this.handleSearchInput = this.handleSearchInput.bind(this);
   }
 
-  handleSearchQuery(event) {
+  handleSearchInput(event) {
     this.setState({
       searchInputValue: event.target.value
     }, console.log('hello from the state:', this.state));
@@ -25,7 +25,7 @@ class App extends React.Component {
     return(
     <div>
       <div className="logo"><h1>Movie List!</h1></div>
-      <Search handleSearchQuery={this.handleSearchQuery} searchInputValue={this.state.searchInputValue}/>
+      <Search handleSearchInput={this.handleSearchInput} searchInputValue={this.state.searchInputValue}/>
       <MovieList movies={this.state.listOfMovies}/>
     </div>
   )}

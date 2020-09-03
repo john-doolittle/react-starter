@@ -3,11 +3,12 @@ import React from 'react';
 var Search = (props) => {
 
   const handleClick = (event) => {
-    props.handleSearchQuery(event.target.value);
+    dostuff;
+    event.preventDefault();
   };
 
   const handleChange = (event) => {
-    doStuff;
+    props.handleSearchInput(event.target.value);
   };
 
   return (
