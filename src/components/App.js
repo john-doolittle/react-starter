@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from './Search.jsx';
 import AddMovie from './AddMovie.jsx';
+import ListToggle from './ListToggle.jsx';
 import sampleMovieData from './sampleMovieData.js';
 import MovieList from './MovieList.jsx';
 import '../main.css';
@@ -64,6 +65,7 @@ class App extends React.Component {
       handleSearchInput={this.handleSearchInput}
       handleSearchSubmit={this.handleSearchSubmit}
       searchInputValue={this.state.searchInputValue}/>
+      <ListToggle />
       <MovieList
       movies={this.state.listOfMovies}/>
     </div>

@@ -28,6 +28,7 @@
   border-radius: 2px;
   border-color: #d3d3d3;
   background: chartreuse;
+  cursor: pointer;
 }
 
 .movieListItem .button:hover {
@@ -35,6 +36,7 @@
   background: #bd3131;
   color: white;
   box-shadow: 0 1px 0 rgba(0,0,0,0.10);
+  cursor: pointer;
 }
 
 .searchBar {
@@ -62,6 +64,7 @@
   border-color: #c6c6c6;
   background: #f0f0f0;
   box-shadow: 0 1px 0 rgba(0,0,0,0.10);
+  cursor: pointer;
 }
 
 .addMovieBar {
@@ -78,6 +81,7 @@
   background: chartreuse;
   width: 15%;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .addMovieBar .button:hover {
@@ -88,4 +92,24 @@
 
 .addMovieBar .form-control {
   width: 70%;
+}
+
+.listToggle {
+  margin: 0 auto;
+  text-align: center;
+  height: 45px;
+}
+
+.listToggle .toWatchButton {
+  background: #fff;
+  cursor: pointer;
+  margin: 5px;
+  height: 30px;
+}
+
+.listToggle .watchedButton {
+  background: #fff;
+  cursor: pointer;
+  margin: 5px;
+  height: 30px;
 }
