@@ -21,7 +21,6 @@ class App extends React.Component {
   }
 
   handleSearchInput(value) {
-    // console.log(value);
     this.setState({
       searchInputValue: value
     }, () => console.log('hello from the state: ', this.state.searchInputValue));
@@ -30,9 +29,7 @@ class App extends React.Component {
   handleSearchSubmit() {
     let filteredMovies = this.state.listOfMovies.filter(movie => movie.title.toLowerCase().includes(this.state.searchInputValue.toLowerCase()));
     if (filteredMovies.length === 0) {
-      this.setState({
-        listOfMovies: [{title: 'No movies by that title'}]
-      })
+      alert("Oops! No matching results!");
     } else {
       this.setState({
         listOfMovies: filteredMovies
@@ -59,9 +56,16 @@ class App extends React.Component {
     return(
     <div>
       <div className="logo"><h1>Movie List!</h1></div>
-      <AddMovie handleAddMovieInput={this.handleAddMovieInput} handleAddMovieSubmit={this.handleAddMovieSubmit} movieInputValue={this.state.movieInputValue}/>
-      <Search handleSearchInput={this.handleSearchInput} handleSearchSubmit={this.handleSearchSubmit} searchInputValue={this.state.searchInputValue}/>
-      <MovieList movies={this.state.listOfMovies}/>
+      <AddMovie
+      handleAddMovieInput={this.handleAddMovieInput}
+      handleAddMovieSubmit={this.handleAddMovieSubmit}
+      movieInputValue={this.state.movieInputValue}/>
+      <Search
+      handleSearchInput={this.handleSearchInput}
+      handleSearchSubmit={this.handleSearchSubmit}
+      searchInputValue={this.state.searchInputValue}/>
+      <MovieList
+      movies={this.state.listOfMovies}/>
     </div>
   )}
 }
