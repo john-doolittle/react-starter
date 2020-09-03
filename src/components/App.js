@@ -11,10 +11,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       listOfMovies: [],
-      searchInputValue: '',
+      movieInputValue: '',
+      searchInputValue: ''
     };
   this.handleSearchInput = this.handleSearchInput.bind(this);
   this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+  this.handleAddMovieInput = this.handleAddMovieInput.bind(this);
   }
 
   handleSearchInput(value) {
@@ -37,11 +39,17 @@ class App extends React.Component {
     }
   }
 
+  handleAddMovieInput(value) {
+    this.setState({
+      movieInputValue: value
+    });
+  }
+
   render() {
     return(
     <div>
       <div className="logo"><h1>Movie List!</h1></div>
-      <AddMovie />
+      <AddMovie handleAddMovieInput={this.handleAddMovieInput} movieInputValue={this.state.movieInputValue}/>
       <Search handleSearchInput={this.handleSearchInput} handleSearchSubmit={this.handleSearchSubmit} searchInputValue={this.state.searchInputValue}/>
       <MovieList movies={this.state.listOfMovies}/>
     </div>

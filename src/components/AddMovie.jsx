@@ -8,7 +8,7 @@ var AddMovie = (props) => {
   };
 
   const handleChange = (event) => {
-    dostuff; // (event.target.value);
+    props.handleAddMovieInput(event.target.value);
   };
 
   return (
