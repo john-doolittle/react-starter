@@ -43,3 +43,29 @@
   background: #f0f0f0;
   box-shadow: 0 1px 0 rgba(0,0,0,0.10);
 }
+
+.addMovieBar {
+  margin: 0 auto;
+  border-radius: 1px;
+  background: #fff;
+  width: 25%;
+  padding: 10px;
+}
+
+.addMovieBar .button {
+  border-radius: 2px;
+  border-color: #d3d3d3;
+  background: chartreuse;
+  width: 15%;
+  margin-left: 10px;
+}
+
+.addMovieBar .button:hover {
+  border-color: #c6c6c6;
+  background: rgba(128, 255, 0, 0.63);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.10);
+}
+
+.addMovieBar .form-control {
+  width: 70%;
+}
