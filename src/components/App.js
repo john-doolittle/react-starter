@@ -10,15 +10,16 @@ class App extends React.Component {
     super(props);
     this.state = {
       listOfMovies: sampleMovieData,
-      searchInputValue: ''
+      searchInputValue: '',
     };
   this.handleSearchInput = this.handleSearchInput.bind(this);
   }
 
-  handleSearchInput(event) {
+  handleSearchInput(value) {
+    // console.log(value);
     this.setState({
-      searchInputValue: event.target.value
-    }, console.log('hello from the state:', this.state));
+      searchInputValue: value
+    }, console.log('this is from the state: ', this.state.searchInputValue));
   }
 
   render() {
