@@ -1,5 +1,6 @@
 import React from 'react';
 import Search from './Search.jsx';
+import AddMovie from './AddMovie.jsx';
 import sampleMovieData from './sampleMovieData.js';
 import MovieList from './MovieList.jsx';
 import '../main.css';
@@ -40,6 +41,7 @@ class App extends React.Component {
     return(
     <div>
       <div className="logo"><h1>Movie List!</h1></div>
+      <AddMovie />
       <Search handleSearchInput={this.handleSearchInput} handleSearchSubmit={this.handleSearchSubmit} searchInputValue={this.state.searchInputValue}/>
       <MovieList movies={this.state.listOfMovies}/>
     </div>
