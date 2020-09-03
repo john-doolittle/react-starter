@@ -4,13 +4,12 @@ import App from './App.js';
 var Search = (props) => {
 
   const handleClick = (event) => {
-    dostuff;
+    props.handleSearchSubmit();
     event.preventDefault();
   };
 
   const handleChange = (event) => {
     props.handleSearchInput(event.target.value);
-    console.log('hello', props.searchInputValue)
   };
 
   return (
