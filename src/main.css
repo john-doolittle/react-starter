@@ -17,6 +17,7 @@
   margin: 5px;
   padding: 20px;
   text-align: left;
+  font-size: large;
 }
 
 .movieListItem .buttonContainer {
@@ -27,7 +28,8 @@
 .movieListItem .button {
   border-radius: 2px;
   border-color: #d3d3d3;
-  background: chartreuse;
+  background: #2ea44f;
+  color: white;
   cursor: pointer;
 }
 
@@ -78,7 +80,8 @@
 .addMovieBar .button {
   border-radius: 2px;
   border-color: #d3d3d3;
-  background: chartreuse;
+  background: #2ea44f;
+  color: white;
   width: 15%;
   margin-left: 10px;
   cursor: pointer;
