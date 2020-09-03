@@ -3,7 +3,7 @@ import React from 'react';
 var AddMovie = (props) => {
 
   const handleClick = (event) => {
-    dostuff;
+    props.handleAddMovieSubmit();
     event.preventDefault();
   };
 

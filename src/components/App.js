@@ -11,12 +11,13 @@ class App extends React.Component {
     super(props);
     this.state = {
       listOfMovies: [],
-      movieInputValue: '',
-      searchInputValue: ''
+      searchInputValue: '',
+      movieInputValue: ''
     };
   this.handleSearchInput = this.handleSearchInput.bind(this);
   this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
   this.handleAddMovieInput = this.handleAddMovieInput.bind(this);
+  this.handleAddMovieSubmit = this.handleAddMovieSubmit.bind(this);
   }
 
   handleSearchInput(value) {
@@ -45,11 +46,20 @@ class App extends React.Component {
     });
   }
 
+  handleAddMovieSubmit() {
+    let newMovie = [{}];
+    newMovie[0].title = this.state.movieInputValue;
+    let moviesArr = this.state.listOfMovies.concat(newMovie);
+    this.setState({
+      listOfMovies: moviesArr
+    });
+  }
+
   render() {
     return(
     <div>
       <div className="logo"><h1>Movie List!</h1></div>
-      <AddMovie handleAddMovieInput={this.handleAddMovieInput} movieInputValue={this.state.movieInputValue}/>
+      <AddMovie handleAddMovieInput={this.handleAddMovieInput} handleAddMovieSubmit={this.handleAddMovieSubmit} movieInputValue={this.state.movieInputValue}/>
       <Search handleSearchInput={this.handleSearchInput} handleSearchSubmit={this.handleSearchSubmit} searchInputValue={this.state.searchInputValue}/>
       <MovieList movies={this.state.listOfMovies}/>
     </div>
