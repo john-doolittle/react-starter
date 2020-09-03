@@ -25,9 +25,15 @@ class App extends React.Component {
 
   handleSearchSubmit() {
     let filteredMovies = this.state.listOfMovies.filter(movie => movie.title.toLowerCase().includes(this.state.searchInputValue));
-    this.setState({
-      listOfMovies: filteredMovies
-    })
+    if (filteredMovies.length === 0) {
+      this.setState({
+        listOfMovies: [{title: 'No movies by that title'}]
+      })
+    } else {
+      this.setState({
+        listOfMovies: filteredMovies
+      })
+    }
   }
 
   render() {
