@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listOfMovies: sampleMovieData,
+      listOfMovies: [],
       searchInputValue: '',
     };
   this.handleSearchInput = this.handleSearchInput.bind(this);
@@ -25,7 +25,7 @@ class App extends React.Component {
   }
 
   handleSearchSubmit() {
-    let filteredMovies = this.state.listOfMovies.filter(movie => movie.title.toLowerCase().includes(this.state.searchInputValue));
+    let filteredMovies = this.state.listOfMovies.filter(movie => movie.title.toLowerCase().includes(this.state.searchInputValue.toLowerCase()));
     if (filteredMovies.length === 0) {
       this.setState({
         listOfMovies: [{title: 'No movies by that title'}]
