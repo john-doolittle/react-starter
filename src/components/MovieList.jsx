@@ -2,11 +2,11 @@ import React from 'react';
 import MovieListItem from './MovieListItem.jsx'
 
 let MovieList = (props) => (
-  <ul class='movieList'>
+  <div className='movieList'>
     {props.movies.map((movie, i) =>
       <MovieListItem movie={movie} key={i} />
     )}
-  </ul>
+  </div>
 );
 
 export default MovieList;

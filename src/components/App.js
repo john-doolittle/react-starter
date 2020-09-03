@@ -1,6 +1,8 @@
 import React from 'react';
-import sampleMovieData from './sampleMovieData.js'
-import MovieList from './MovieList.jsx'
+import Search from './Search.jsx';
+import sampleMovieData from './sampleMovieData.js';
+import MovieList from './MovieList.jsx';
+import '../main.css';
 
 class App extends React.Component {
 
@@ -14,7 +16,8 @@ class App extends React.Component {
   render() {
     return(
     <div>
-      <div><h5>This is a test</h5></div>
+      <div className="logo"><h1>Movie List!</h1></div>
+      <Search />
       <MovieList movies={this.state.listOfMovies}/>
     </div>
   )}
