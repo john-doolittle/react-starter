@@ -14,7 +14,7 @@ var Search = (props) => {
 
   return (
     <div className="searchBar">
-      <input className="form-control" value={props.searchInputValue} type="text" onChange={handleChange}/>
+      <input className="form-control" placeholder="Search..." value={props.searchInputValue} type="text" onChange={handleChange}/>
       <button className="button" onClick={handleClick}>
         Search
       </button>
