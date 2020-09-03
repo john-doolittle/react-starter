@@ -5,15 +5,36 @@
 }
 
 .movieList {
-  width: 30%;
+  border: 2px solid black;
+  padding: 10px;
+  width: 25%;
   margin: 0 auto;
 }
 
 .movieListItem {
+  position: relative;
   border: 1px solid black;
-  margin: 0 auto;
-  padding: 2px;
-  text-align: center;
+  margin: 5px;
+  padding: 20px;
+  text-align: left;
+}
+
+.movieListItem .buttonContainer {
+  position: absolute;
+  right: 10px;
+}
+
+.movieListItem .button {
+  border-radius: 2px;
+  border-color: #d3d3d3;
+  background: chartreuse;
+}
+
+.movieListItem .button:hover {
+  border-color: #c6c6c6;
+  background: #bd3131;
+  color: white;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.10);
 }
 
 .searchBar {
