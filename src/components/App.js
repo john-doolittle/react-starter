@@ -10,14 +10,22 @@ class App extends React.Component {
     super(props);
     this.state = {
       listOfMovies: sampleMovieData,
+      searchInputValue: ''
     };
+  this.handleSearchQuery = this.handleSearchQuery.bind(this);
+  }
+
+  handleSearchQuery(event) {
+    this.setState({
+      searchInputValue: event.target.value
+    }, console.log('hello from the state:', this.state));
   }
 
   render() {
     return(
     <div>
       <div className="logo"><h1>Movie List!</h1></div>
-      <Search />
+      <Search handleSearchQuery={this.handleSearchQuery} searchInputValue={this.state.searchInputValue}/>
       <MovieList movies={this.state.listOfMovies}/>
     </div>
   )}

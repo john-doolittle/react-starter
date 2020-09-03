@@ -1,13 +1,21 @@
 import React from 'react';
 
 var Search = (props) => {
-  // const handleChange = (event) => {
-  //   props.queryChange(event.target.value);
-  // };
+
+  const handleClick = (event) => {
+    props.handleSearchQuery(event.target.value);
+  };
+
+  const handleChange = (event) => {
+    doStuff;
+  };
+
   return (
     <div className="searchBar">
-      <input className="form-control"/>
-      <button className="button">Search</button>
+      <input className="form-control" value={props.searchInputValue} onChange={handleChange}/>
+      <button className="button" onClick={handleClick}>
+        Search
+      </button>
     </div>
   );
 
