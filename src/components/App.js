@@ -6,14 +6,15 @@ import sampleMovieData from './sampleMovieData.js';
 import MovieList from './MovieList.jsx';
 import '../main.css';
 
+let movieStorage = [];
+
 class App extends React.Component {
 
   constructor(props) {
     super(props);
+    let filtered = movieStorage.filter(movie => !movie.watched)
     this.state = {
-      watchedMovies: [],
-      moviesToWatch: [],
-      displayedMovies: [],
+      displayedMovies: filtered,
       searchInputValue: '',
       movieInputValue: '',
       showWatched: false
@@ -48,13 +49,17 @@ class App extends React.Component {
   }
 
   handleAddMovieSubmit() {
-    let newMovie = [{}];
-    newMovie[0].title = this.state.movieInputValue;
-    let moviesArr = this.state.displayedMovies.concat(newMovie);
+    let newMovie = {};
+    newMovie.title = this.state.movieInputValue;
+    newMovie.watched = this.state.showWatched;
+    movieStorage.push(newMovie);
+    let filtered = movieStorage.filter(movie => !movie.watched)
     this.setState({
-      displayedMovies: moviesArr
+      displayedMovies: filtered
     });
   }
+
+
 
   render() {
     return(
