@@ -24,6 +24,7 @@ class App extends React.Component {
   this.handleAddMovieInput = this.handleAddMovieInput.bind(this);
   this.handleAddMovieSubmit = this.handleAddMovieSubmit.bind(this);
   this.handleWatchedToggle = this.handleWatchedToggle.bind(this);
+  this.handleMovieItemToggle = this.handleMovieItemToggle.bind(this);
   }
 
   handleSearchInput(value) {
@@ -69,6 +70,10 @@ class App extends React.Component {
     });
   }
 
+  handleMovieItemToggle(value) {
+    dostuff;
+  }
+
   render() {
     return(
     <div>
@@ -85,7 +90,8 @@ class App extends React.Component {
       handleWatchedToggle={this.handleWatchedToggle}
       state={this.state}/>
       <MovieList
-      movies={this.state.displayedMovies}/>
+      movies={this.state.displayedMovies}
+      handleMovieItemToggle={this.handleMovieItemToggle}/>
     </div>
   )}
 }

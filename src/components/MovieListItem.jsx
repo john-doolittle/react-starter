@@ -1,16 +1,22 @@
 import React from 'react';
 
-let MovieListItem = ({movie}) => (
-      <div className='movieListItem'>
+let MovieListItem = (props) => {
+
+  const handleToggle = (event) => {
+    props.handleMovieItemToggle();
+    event.preventDefault();
+  };
+      return (<div className='movieListItem'>
           <span className="movieContainer">
             {movie.title}
           </span>
           <span className="buttonContainer">
-            <button className="button">
+            <button className="button" onClick={handleToggle}>
             Watched
             </button>
           </span>
       </div>
-);
+      );
+};
 
 export default MovieListItem;
