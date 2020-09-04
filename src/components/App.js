@@ -54,7 +54,7 @@ class App extends React.Component {
     newMovie.title = this.state.movieInputValue;
     newMovie.watched = this.state.showWatched;
     movieStorage.push(newMovie);
-    let filtered = movieStorage.filter(movie => !movie.watched);
+    let filtered = movieStorage.filter(movie => movie.watched === this.state.showWatched);
     this.setState({
       displayedMovies: filtered
     });
