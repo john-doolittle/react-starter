@@ -11,9 +11,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listOfMovies: [],
+      watchedMovies: [],
+      moviesToWatch: [],
+      displayedMovies: [],
       searchInputValue: '',
-      movieInputValue: ''
+      movieInputValue: '',
+      showWatched: false
     };
   this.handleSearchInput = this.handleSearchInput.bind(this);
   this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
@@ -24,16 +27,16 @@ class App extends React.Component {
   handleSearchInput(value) {
     this.setState({
       searchInputValue: value
-    }, () => console.log('hello from the state: ', this.state.searchInputValue));
+    });
   }
 
   handleSearchSubmit() {
-    let filteredMovies = this.state.listOfMovies.filter(movie => movie.title.toLowerCase().includes(this.state.searchInputValue.toLowerCase()));
+    let filteredMovies = this.state.displayedMovies.filter(movie => movie.title.toLowerCase().includes(this.state.searchInputValue.toLowerCase()));
     if (filteredMovies.length === 0) {
       alert("Oops! No matching results!");
     } else {
       this.setState({
-        listOfMovies: filteredMovies
+        displayedMovies: filteredMovies
       })
     }
   }
@@ -47,9 +50,9 @@ class App extends React.Component {
   handleAddMovieSubmit() {
     let newMovie = [{}];
     newMovie[0].title = this.state.movieInputValue;
-    let moviesArr = this.state.listOfMovies.concat(newMovie);
+    let moviesArr = this.state.displayedMovies.concat(newMovie);
     this.setState({
-      listOfMovies: moviesArr
+      displayedMovies: moviesArr
     });
   }
 
@@ -65,9 +68,9 @@ class App extends React.Component {
       handleSearchInput={this.handleSearchInput}
       handleSearchSubmit={this.handleSearchSubmit}
       searchInputValue={this.state.searchInputValue}/>
-      <ListToggle />
+      <ListToggle state={this.state}/>
       <MovieList
-      movies={this.state.listOfMovies}/>
+      movies={this.state.displayedMovies}/>
     </div>
   )}
 }
