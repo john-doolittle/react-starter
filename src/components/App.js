@@ -23,6 +23,7 @@ class App extends React.Component {
   this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
   this.handleAddMovieInput = this.handleAddMovieInput.bind(this);
   this.handleAddMovieSubmit = this.handleAddMovieSubmit.bind(this);
+  this.handleWatchedToggle = this.handleWatchedToggle.bind(this);
   }
 
   handleSearchInput(value) {
@@ -53,13 +54,20 @@ class App extends React.Component {
     newMovie.title = this.state.movieInputValue;
     newMovie.watched = this.state.showWatched;
     movieStorage.push(newMovie);
-    let filtered = movieStorage.filter(movie => !movie.watched)
+    let filtered = movieStorage.filter(movie => !movie.watched);
     this.setState({
       displayedMovies: filtered
     });
   }
 
-
+  handleWatchedToggle() {
+    let bool = !(this.state.showWatched);
+    let filtered = movieStorage.filter(movie => movie.watched === bool);
+    this.setState({
+      displayedMovies: filtered,
+      showWatched: bool
+    });
+  }
 
   render() {
     return(
@@ -73,7 +81,9 @@ class App extends React.Component {
       handleSearchInput={this.handleSearchInput}
       handleSearchSubmit={this.handleSearchSubmit}
       searchInputValue={this.state.searchInputValue}/>
-      <ListToggle state={this.state}/>
+      <ListToggle
+      handleWatchedToggle={this.handleWatchedToggle}
+      state={this.state}/>
       <MovieList
       movies={this.state.displayedMovies}/>
     </div>
