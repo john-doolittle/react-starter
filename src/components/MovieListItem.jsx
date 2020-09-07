@@ -8,7 +8,7 @@ let MovieListItem = (props) => {
   };
       return (<div className='movieListItem'>
           <span className="movieContainer">
-            {movie.title}
+            {props.movie.title}
           </span>
           <span className="buttonContainer">
             <button className="button" onClick={handleToggle}>
