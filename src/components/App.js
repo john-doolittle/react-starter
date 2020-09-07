@@ -60,7 +60,8 @@ class App extends React.Component {
     movieStorage.push(newMovie);
     let filtered = movieStorage.filter(movie => movie.watched === this.state.showWatched);
     this.setState({
-      displayedMovies: filtered
+      displayedMovies: filtered,
+      movieInputValue: ''
     });
   }
 
@@ -73,12 +74,13 @@ class App extends React.Component {
     });
   }
 
-  handleMovieItemToggle(movie) {
-    // movie.watched = !(movie.watched);
-    // let filtered = movieStorage.filter(movie => movie.watched === this.state.showWatched)
-    // this.setState({
-    //   displayedMovies: filtered,
-    // });
+  handleMovieItemToggle(movieId) {
+    let movieItem = movieStorage.filter(movie => movie.title === movieId);
+    movieItem[0].watched = !(movieItem.watched);
+    let filtered = movieStorage.filter(movie => movie.watched === this.state.showWatched)
+    this.setState({
+      displayedMovies: filtered,
+    });
   }
 
   render() {
