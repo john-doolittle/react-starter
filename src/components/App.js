@@ -36,11 +36,14 @@ class App extends React.Component {
   handleSearchSubmit() {
     let filteredMovies = this.state.displayedMovies.filter(movie => movie.title.toLowerCase().includes(this.state.searchInputValue.toLowerCase()));
     if (filteredMovies.length === 0) {
-      alert("Oops! No matching results!");
+      this.setState({
+        searchInputValue: ''
+      }, alert("Oops! No matching results!"));
     } else {
       this.setState({
-        displayedMovies: filteredMovies
-      })
+        displayedMovies: filteredMovies,
+        searchInputValue: ''
+      });
     }
   }
 
@@ -70,8 +73,12 @@ class App extends React.Component {
     });
   }
 
-  handleMovieItemToggle(value) {
-    dostuff;
+  handleMovieItemToggle(movie) {
+    // movie.watched = !(movie.watched);
+    // let filtered = movieStorage.filter(movie => movie.watched === this.state.showWatched)
+    // this.setState({
+    //   displayedMovies: filtered,
+    // });
   }
 
   render() {

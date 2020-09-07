@@ -3,7 +3,8 @@ import React from 'react';
 let MovieListItem = (props) => {
 
   const handleToggle = (event) => {
-    props.handleMovieItemToggle();
+    console.log('this is the value', event.target.value);
+    props.handleMovieItemToggle(event.target.value);
     event.preventDefault();
   };
       return (<div className='movieListItem'>
