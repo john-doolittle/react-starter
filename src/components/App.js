@@ -76,7 +76,7 @@ class App extends React.Component {
 
   handleMovieItemToggle(movieId) {
     let movieItem = movieStorage.filter(movie => movie.title === movieId);
-    movieItem[0].watched = !(movieItem.watched);
+    movieItem[0].watched = !(movieItem[0].watched);
     let filtered = movieStorage.filter(movie => movie.watched === this.state.showWatched)
     this.setState({
       displayedMovies: filtered,
